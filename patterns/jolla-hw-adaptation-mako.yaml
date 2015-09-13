@@ -1,49 +1,71 @@
-# Feel free to disable non-critical HA parts during devel by commenting out
-# Generated in hadk by executing: cd $ANDROID_ROOT; rpm/helpers/add_new_device.sh
+# Feel free to disable non-critical HA parts during devel by commenting lines out
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
 
 Description: Pattern with packages for mako HW Adaptation
 Name: jolla-hw-adaptation-mako
 Requires:
 - pattern:jolla-hw-adaptation-hybris
 - pattern:jolla-hw-adaptation-hybris-droid-vibrator
+- pattern:jolla-ui-configuration-mako
 
 - droid-hal-mako
-- droid-hal-mako-sailfish-config
 - droid-hal-mako-img-boot
-- droid-hal-mako-pulseaudio-settings
-- droid-hal-mako-policy-settings
 - droid-hal-mako-kernel-modules
-- droid-hal-mako-preinit-plugin
+- droid-config-mako-sailfish
+- droid-config-mako-pulseaudio-settings
+- droid-config-mako-policy-settings
+- droid-config-mako-preinit-plugin
+- droid-hal-version-mako
+
+- pulseaudio-modules-droid
 
 # These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
 - qt5-qtwayland-wayland_egl
 - qt5-qpa-hwcomposer-plugin
 - qtscenegraph-adaptation
 
-- gstreamer0.10-droidcamsrc
-- gstreamer0.10-omx
-- gstreamer0.10-droideglsink
-- gstreamer0.10-colorconv
-- nemo-qtmultimedia-plugins-gstvideotexturebackend
+# GStreamer v0.10 multimedia support is being deprecated
+#- gstreamer0.10-droidcamsrc
+#- gstreamer0.10-omx
+#- gstreamer0.10-droideglsink
+#- nemo-qtmultimedia-plugins-gstvideotexturebackend
 
-# This is needed for jolla-camera (TODO: add to its Requires instead)
-- qt5-qtdeclarative-import-positioning
-- qt5-qtdeclarative-import-sensors
+# Add GStreamer v1.0 as standard
+- gstreamer1.0
+- gstreamer1.0-plugins-good
+- gstreamer1.0-plugins-base
+- gstreamer1.0-plugins-bad
+- nemo-gstreamer1.0-interfaces
 
-# This is a temporary acceptable hack to have mako orientation sensors 
-# See README for full description: https://github.com/mer-hybris/unblank-restart-sensors
-- unblank-restart-sensors
-
-# This is needed for notification LEDs:
+# This is needed for notification LEDs
 - mce-plugin-libhybris
 
-# enables mode selector upon plugging USB cable:
+## USB mode controller
+# Enables mode selector upon plugging USB cable:
 - usb-moded
-- usb-moded-pc-suite-mode-android
 - usb-moded-defaults-android
-- usb-moded-connection-sharing-android-config
 - usb-moded-developer-mode-android
+- usb-moded-pc-suite-mode-android
+
+# Extra useful modes not officially supported:
+# might need some configuration to get working
 - usb-moded-mass-storage-android-config
+# working but careful with roaming!
+- usb-moded-connection-sharing-android-config
+# android diag mode only usable for certain android tools
+- usb-moded-diag-mode-android
+
+# jolla-rnd-device will enable usb-moded even when UI is not yet
+# brought up (useful during development, available since update10)
+- jolla-rnd-device
+
+# from update13, this is needed explicitly
+- bluez-configs-sailfish
+# hammerhead, grouper, and maguro use this in scripts, so include for all
+- rfkill
+
+# enable device lock and allow to select untrusted software
+- jolla-devicelock-plugin-encsfa
 
 Summary: Jolla HW Adaptation mako
 
