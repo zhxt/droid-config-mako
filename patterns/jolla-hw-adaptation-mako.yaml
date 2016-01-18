@@ -18,6 +18,8 @@ Requires:
 - droid-hal-version-mako
 
 - pulseaudio-modules-droid
+# for audio recording to work:
+- qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
 # These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
 - qt5-qtwayland-wayland_egl
@@ -55,10 +57,6 @@ Requires:
 # android diag mode only usable for certain android tools
 - usb-moded-diag-mode-android
 
-# jolla-rnd-device will enable usb-moded even when UI is not yet
-# brought up (useful during development, available since update10)
-- jolla-rnd-device
-
 # from update13, this is needed explicitly
 - bluez-configs-sailfish
 # hammerhead, grouper, and maguro use this in scripts, so include for all
@@ -66,6 +64,16 @@ Requires:
 
 # enable device lock and allow to select untrusted software
 - jolla-devicelock-plugin-encsfa
+
+# Settings app needs this since update15
+- jolla-settings-layout
+
+# For devices with working cellular modem:
+#- pattern:jolla-sailfish-cellular-apps
+#- telepathy-ring
+
+# For devices where test_gps eventually gets a fix:
+#- geoclue-provider-hybris-community
 
 Summary: Jolla HW Adaptation mako
 
