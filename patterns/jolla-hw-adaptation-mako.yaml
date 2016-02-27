@@ -79,7 +79,7 @@ Requires:
 - telepathy-ring
 
 # For devices where test_gps eventually gets a fix:
-- geoclue-providers-hybris
+- geoclue-provider-hybris
 
 Summary: Jolla HW Adaptation mako
 
