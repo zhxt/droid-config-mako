@@ -45,6 +45,10 @@ Requires:
 - qt5-qtdeclarative-import-positioning
 - qt5-qtdeclarative-import-sensors
 
+# This is required for harbour-flashlight
+- gstreamer0.10-droidcamsrc
+- gstreamer0.10-droideglsink
+
 # This is needed for notification LEDs
 - mce-plugin-libhybris
 
