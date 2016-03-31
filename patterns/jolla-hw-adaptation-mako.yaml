@@ -10,6 +10,7 @@ Requires:
 
 - droid-hal-mako
 - droid-hal-mako-img-boot
+- droid-hal-mako-kernel
 - droid-hal-mako-kernel-modules
 - droid-config-mako-sailfish
 - droid-config-mako-pulseaudio-settings
