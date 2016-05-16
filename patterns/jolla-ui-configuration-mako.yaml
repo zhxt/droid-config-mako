@@ -4,7 +4,7 @@
 Description: Pattern with UI related packages for mako configurations
 Name: jolla-ui-configuration-mako
 Requires:
-- jolla-ambient-z@ICON_RES@
-- ambient-icons-closed-z@ICON_RES@
+- jolla-ambient-z1.25
+- ambient-icons-closed-z1.25
 Summary: Jolla UI Configuration mako
 
