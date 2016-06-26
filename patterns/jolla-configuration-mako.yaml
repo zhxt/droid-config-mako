@@ -5,7 +5,10 @@ Description: Pattern with packages for mako configurations
 Name: jolla-configuration-mako
 Requires:
 - pattern:jolla-hw-adaptation-mako
-- pattern:jolla-configuration-sfe
+- pattern:jolla-sailfish-applications
+- pattern:jolla-ui-wayland
+# Early stages of porting benefit from these:
+- pattern:sailfish-porter-tools
 
 Summary: Jolla Configuration mako
 

@@ -1,0 +1,8 @@
+CPUCHECK_STRING="QCT APQ8064 MAKO"
+
+PART_1="boot"
+
+PART_REAL_1="mmcblk0p6"
+
+PART_I="1"
+

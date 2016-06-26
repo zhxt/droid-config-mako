@@ -10,6 +10,7 @@ Requires:
 
 - droid-hal-mako
 - droid-hal-mako-img-boot
+- droid-hal-mako-kernel
 - droid-hal-mako-kernel-modules
 - droid-config-mako-sailfish
 - droid-config-mako-pulseaudio-settings
@@ -18,6 +19,8 @@ Requires:
 - droid-hal-version-mako
 
 - pulseaudio-modules-droid
+# for audio recording to work:
+- qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
 # These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
 - qt5-qtwayland-wayland_egl
@@ -37,6 +40,16 @@ Requires:
 - gstreamer1.0-plugins-bad
 - nemo-gstreamer1.0-interfaces
 
+- gstreamer1.0-droid
+
+# This is needed for some harbour apps (eg. Falldown doesn't work otherwise)
+- qt5-qtdeclarative-import-positioning
+- qt5-qtdeclarative-import-sensors
+
+# This is required for harbour-flashlight
+- gstreamer0.10-droidcamsrc
+- gstreamer0.10-droideglsink
+
 # This is needed for notification LEDs
 - mce-plugin-libhybris
 
@@ -55,17 +68,28 @@ Requires:
 # android diag mode only usable for certain android tools
 - usb-moded-diag-mode-android
 
-# jolla-rnd-device will enable usb-moded even when UI is not yet
-# brought up (useful during development, available since update10)
-- jolla-rnd-device
-
 # from update13, this is needed explicitly
 - bluez-configs-sailfish
+
+# OBEX for bluetooth PBAP
+- obexd-calldata-provider
+- obexd-configs-sailfish
+
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
 # enable device lock and allow to select untrusted software
 - jolla-devicelock-plugin-encsfa
+
+# Settings app needs this since update15
+- jolla-settings-layout
+
+# For devices with working cellular modem:
+- pattern:jolla-sailfish-cellular-apps
+- telepathy-ring
+
+# For devices where test_gps eventually gets a fix:
+- geoclue-provider-hybris
 
 Summary: Jolla HW Adaptation mako
 
