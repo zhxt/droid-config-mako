@@ -61,9 +61,6 @@ Requires:
 # android diag mode only usable for certain android tools
 - usb-moded-diag-mode-android
 
-# from update13, this is needed explicitly
-- bluez-configs-sailfish
-
 # OBEX for bluetooth PBAP
 - obexd-calldata-provider
 - obexd-configs-sailfish
