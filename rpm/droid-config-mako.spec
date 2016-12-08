@@ -21,5 +21,8 @@ Obsoletes: ofono-configs-mer
 Provides: bluez-configs
 Obsoletes: bluez-configs-sailfish
 
+Provides: obexd-configs
+Obsoletes: obexd-configs-sailfish
+
 %include droid-configs-device/droid-configs.inc
 
