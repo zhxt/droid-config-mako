@@ -19,7 +19,7 @@ Provides: ofono-configs
 Obsoletes: ofono-configs-mer
 
 Provides: bluez-configs
-Obsoletes: bluez-configs
+Obsoletes: bluez-configs-sailfish
 
 %include droid-configs-device/droid-configs.inc
 
