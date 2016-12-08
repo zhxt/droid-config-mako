@@ -18,5 +18,8 @@
 Provides: ofono-configs
 Obsoletes: ofono-configs-mer
 
+Provides: bluez-configs
+Obsoletes: bluez-configs
+
 %include droid-configs-device/droid-configs.inc
 
